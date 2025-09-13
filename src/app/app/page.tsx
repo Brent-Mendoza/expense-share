@@ -4,6 +4,7 @@ import GroupCard from "./_components/GroupCard"
 import Link from "next/link"
 import { cookies } from "next/headers"
 import { Group as TGroup } from "@/types/group"
+import JoinButton from "./_components/JoinButton"
 
 export default async function AppPage() {
   const cookieStore = await cookies()
@@ -17,16 +18,21 @@ export default async function AppPage() {
   return (
     <main className="flex-1 p-4 ">
       <section>
-        <div className="flex flex-col gap-2">
-          <h1 className="text-4xl font-bold flex items-center gap-2">
-            <Group />
-            Groups
-          </h1>
-          <Link href="/app/create-group" className="self-start">
-            <Button className="self-start cursor-pointer hover:scale-105">
-              +Create Group
-            </Button>
-          </Link>
+        <div className=" flex items-center justify-between">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-4xl font-bold flex items-center gap-2">
+              <Group />
+              Groups
+            </h1>
+            <Link href="/app/create-group" className="self-start">
+              <Button className="self-start cursor-pointer hover:scale-105">
+                +Create Group
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <JoinButton />
+          </div>
         </div>
       </section>
       <section className="mt-8">

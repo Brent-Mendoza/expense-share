@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import z from "zod/v3"
 import { Loader2 } from "lucide-react"
 import { useState } from "react"
-import { redirect } from "next/navigation"
 
 const GroupSchema = z.object({
   groupName: z.string().min(1, "Group name is required"),
